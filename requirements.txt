@@ -1,0 +1,13 @@
+langgraph
+langchain
+langchain-openai
+langchain-community
+langchain-core
+yfinance
+tavily-python
+faiss-cpu
+pypdf
+sentence-transformers
+python-dotenv
+requests
+pymupdf
