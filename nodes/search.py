@@ -17,7 +17,7 @@ def search_node(state:AgentState) ->dict :
     if attempts == 0 :
         query =f"{company_name} {ticker} stock earnings analyst rating 2024 2025"
     elif attempts == 1:
-        query =f"{company_name} reveue profit quaterly results outlook "
+        query =f"{company_name} revenue profit quarterly results outlook "
     else :
         sector = state.get("sector","technology")
         query = f"{ticker}{sector} stock market performance investment"

@@ -17,6 +17,7 @@ class AgentState(TypedDict , total=False):
 
     risk_factors: str 
     managements_guidance:str
+    management_guidance:str
 
     bull_thesis:str
     bear_thesis:str 

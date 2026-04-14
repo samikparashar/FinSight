@@ -14,9 +14,12 @@ FAST_MODEL="llama-3.1-8b-instant"
 # FAST_MODEL = "gpt-4o-mini"
 FAST_MODEL_API_KEY=GROQ_API_KEY
 
-# Powerful = better reasoning (OPENAI)
-POWERFUL_MODEL="gpt-4o"
-POWERFUL_MODEL_API_KEY=OPENAI_API_KEY
+# Powerful = better reasoning (groq)
+POWERFUL_MODEL="llama-3.3-70b-versatile"
+POWERFUL_MODEL_API_KEY=GROQ_API_KEY
+
+# Local embedding model (no OpenAI dependency)
+EMBEDDING_MODEL="sentence-transformers/all-MiniLM-L6-v2"
 
 
 # here we are doing RAG CONFIGURATIONS 
