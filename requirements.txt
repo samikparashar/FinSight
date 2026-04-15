@@ -11,3 +11,5 @@ sentence-transformers
 python-dotenv
 requests
 pymupdf
+
+pytest
