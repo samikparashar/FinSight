@@ -25,6 +25,57 @@ It is designed to minimize hallucinations and produce structured, explainable fi
 ## System Architecture
 
 The system is built as independent nodes operating over a shared `state` object.
+## 🧠 FinSight Architecture
+
+```mermaid
+---
+config:
+  layout: dagre
+  theme: base
+---
+flowchart TD
+
+    subgraph L1[Data Ingestion]
+        A[📊 Market Data]
+        B[📰 News Search]
+        C[📄 SEC Filings]
+    end
+
+    subgraph L2[Analysis Engine]
+        D[🧠 RAG Analyst]
+        E[🔍 Inspector]
+    end
+
+    subgraph L3[Report Generation]
+        F[🧩 Synthesis]
+        G[✍️ Writer]
+        H[📤 Final Report]
+    end
+
+    A --> B
+    A --> C
+
+    C --> D
+    D --> E
+
+    B --> E
+
+    E -->|✅ Approved| F
+    E -->|🔁 Retry Search| B
+
+    F --> G
+    G --> H
+
+    classDef data fill:#E3F2FD,stroke:#1E88E5,stroke-width:2px,color:#0D47A1;
+    classDef analysis fill:#E8F5E9,stroke:#43A047,stroke-width:2px,color:#1B5E20;
+    classDef output fill:#FFF3E0,stroke:#FB8C00,stroke-width:2px,color:#E65100;
+    classDef decision fill:#FCE4EC,stroke:#D81B60,stroke-width:2px,color:#880E4F;
+
+    class A,B,C data;
+    class D analysis;
+    class E decision;
+    class F,G,H output;
+```
 
 ### Implemented Nodes
 
