@@ -10,4 +10,7 @@ def inspector_node(state: AgentState)->dict:
     print(f"\n[Inspector] is Validating gathering evidence")
 
     headlines = state.get("news_headlines",     [])
-    financial_data =state.get("financial_data")
+    financial_data =state.get("financial_data" , "")
+    risk_factors = state.get("risk_factors", "")
+    guidance = state.get("management_guidance", "")
+    search_attempts= state.get("search_attemps")

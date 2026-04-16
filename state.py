@@ -13,7 +13,7 @@ class AgentState(TypedDict , total=False):
 
     news_headlines: List[str]
     search_query_used: str
-    search_attemps:int
+    search_attempts:int
 
     filing_url: str 
     vectorstore: Any
