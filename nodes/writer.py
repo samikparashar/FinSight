@@ -3,10 +3,10 @@ from datetime import datetime
 from langchain_groq import ChatGroq
 from langchain.messages import HumanMessage, SystemMessage
 
-from config import POWERFUL_MODEL
+from config import MAX_OUTPUT_TOKENS, POWERFUL_MODEL
 from state import AgentState
 
-_llm = ChatGroq(model=POWERFUL_MODEL, temperature=0.4)
+_llm = ChatGroq(model=POWERFUL_MODEL, temperature=0.4, max_tokens=MAX_OUTPUT_TOKENS)
 
 _SYSTEM = """
 You are a Goldman Sachs equity research analyst producing an institutional

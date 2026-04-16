@@ -15,7 +15,7 @@ FAST_MODEL="llama-3.1-8b-instant"
 FAST_MODEL_API_KEY=GROQ_API_KEY
 
 # Powerful = better reasoning (groq)
-POWERFUL_MODEL="openai/gpt-oss-120b"
+POWERFUL_MODEL="llama-3.3-70b-versatile"
 POWERFUL_MODEL_API_KEY=GROQ_API_KEY
 
 # Local embedding model (no OpenAI dependency)
@@ -28,3 +28,4 @@ RAG_CHUNK_SIZE = 1000
 RAG_CHUNK_OVERLAP = 200 
 RAG_TOP_K =3 
 MAX_RAG_CHUNKS = 6 
+MAX_OUTPUT_TOKENS = 800
