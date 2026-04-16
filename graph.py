@@ -20,4 +20,31 @@ def route_after_inspector(state: AgentState) -> str:
     
 def build_graph():
     graph = StateGraph(AgentState)
+
+    graph.add_node("market_data",     market_data_node)
+    graph.add_node("search",          search_node)
+    graph.add_node("filing_ingestor", filing_ingestor_node)
+    graph.add_node("rag_analyst",     rag_analyst_node)
+    graph.add_node("inspector",       inspector_node)
+    graph.add_node("synthesis",       synthesis_node)
+    graph.add_node("writer",          writer_node)
+
+    graph.set_entry_point("market_data")
     
+    graph.add_edge("market_data" ,      "search")
+    graph.add_edge("market_data",       "filing_ingestor")
+    graph.add_edge("filing_ingestor" ,  "rag_analyst")
+    graph.add_edge("rag_analyst",       "inspector")
+    graph.add_edge("search",            "inspector")
+    graph.add_edge("synthesis",         "writer")
+    graph.add_edge("writer",            END)
+
+    graph.add_conditional_edges(
+        "inspector",
+        route_after_inspector,{ 
+            "synthesis": "synthesis",
+            "search"   : "search",
+        }
+    )
+
+
