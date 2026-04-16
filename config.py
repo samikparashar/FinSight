@@ -15,7 +15,7 @@ FAST_MODEL="llama-3.1-8b-instant"
 FAST_MODEL_API_KEY=GROQ_API_KEY
 
 # Powerful = better reasoning (groq)
-POWERFUL_MODEL="llama-3.3-70b-versatile"
+POWERFUL_MODEL="openai/gpt-oss-120b"
 POWERFUL_MODEL_API_KEY=GROQ_API_KEY
 
 # Local embedding model (no OpenAI dependency)
