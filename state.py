@@ -9,14 +9,17 @@ class AgentState(TypedDict , total=False):
     sector: str
     market_cap: float
 
+    financial_data: str
+
     news_headlines: List[str]
     search_query_used: str
     search_attemps:int
+
     filing_url: str 
     vectorstore: Any
 
     risk_factors: str 
-    managements_guidance:str
+    
     management_guidance:str
 
     bull_thesis:str
